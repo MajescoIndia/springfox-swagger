@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.majesco.poc</groupId>
-	<artifactId>swagger-poc</artifactId>
+	<artifactId>springfox-swagger</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>swagger-poc</name>
+	<name>springfox-swagger</name>
 	<description>Spring Boot with Swagger Documentation using Springfox and Swagger2</description>
 
 	<parent>
