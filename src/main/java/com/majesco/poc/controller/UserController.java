@@ -2,26 +2,23 @@ package com.majesco.poc.controller;
 
 import com.majesco.poc.model.User;
 import com.majesco.poc.service.UserService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author Biplab Nayak
  */
 
-@RestController
+/*@RestController
 @RequestMapping("/user")
+@Api(value = "vinDecode", description = "VIN Decodeer")*/
 public class UserController {
 
     @Autowired UserService userService;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public @ResponseBody
-    User getUser() {
-        return userService.getUser("biplab");
-        //return "dsfbsghdvfgdvsgfvg";
+    @RequestMapping(method = RequestMethod.GET, path = "/getUser/{userId}")
+    public @ResponseBody User getUser(@PathVariable("userId") String userId) {
+        return userService.getUser(userId);
     }
 }
