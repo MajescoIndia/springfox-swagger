@@ -24,8 +24,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.google.common.base.Predicates.or;
-import static com.google.common.collect.Lists.newArrayList;
-import static springfox.documentation.builders.PathSelectors.ant;
 import static springfox.documentation.builders.PathSelectors.regex;
 
 @Configuration
@@ -46,7 +44,7 @@ public class SwaggerConfig {
 
 
     private Predicate<String> categoryPaths() {
-        return or(regex("/*"), regex("/.*"), regex("/"));
+        return or(regex("/driverInfo.*"));
     }
 
     private ApiInfo apiInfo() {
@@ -62,9 +60,9 @@ public class SwaggerConfig {
                         "versions of Lorem Ipsum.")
                 .termsOfServiceUrl("http://springfox.io")
                 .contact("springfox")
-                .license("Apache License Version 2.0")
-                .licenseUrl("https://github.com/springfox/springfox/blob/master/LICENSE")
-                .version("2.0")
+                //.license("Apache License Version 2.0")
+                //.licenseUrl("https://github.com/springfox/springfox/blob/master/LICENSE")
+                .version("1.0")
                 .build();
     }
 
